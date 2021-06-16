@@ -1,0 +1,963 @@
+/**
+ * Table of Contents
+ * ----------------------------------------------------------------------------
+ * 00.  General
+ * 01.  Header
+ * 02.  navbar
+ * 03.  Slider
+ * 04.  Page-containt
+ * 05.  Page-owl
+ * 06.  Footer
+ * 07.  Free-page
+ * 08.  Media quary
+ */
+
+
+
+/**
+ * 0.  General
+ * ----------------------------------------------------------------------------
+ */
+
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+* {
+    font-family: 'Droid Arabic Kufi', serif;
+    outline: none;
+}
+
+body {
+    background: #FFF;
+}
+
+
+/** placeholder **/
+
+::-webkit-input-placeholder {
+    color: #C3C3C3;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/** scroll-bar **/
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 10px;
+    background: #f8f3f3;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #50a602;
+    border: 1px solid #f8f3f3
+}
+
+
+/** select-page **/
+
+::selection {
+    background: #50a602;
+    color: #FFF;
+}
+
+
+/** scroll-to-top **/
+
+.scroll-top {
+    position: fixed;
+    bottom: 5rem;
+    left: -5px;
+    width: 5rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: #50a602;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: none;
+}
+
+.scroll-top a {
+    color: #fff
+}
+
+
+
+
+
+/**
+ * 01. Header
+ * ----------------------------------------------------------------------------
+ */
+
+header{
+        overflow: auto;
+}
+header > div:first-child{
+    background: #000;
+}
+header > div:last-child{
+    overflow: auto;
+    background: #efefef;
+    padding: 20px 0;
+}
+
+/** Header-Top **/
+.header-top > div{
+    padding: 10px;
+}
+.header-top div ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.header-top div ul li{
+    display: inline-block;
+}
+.header-top div ul li a{
+    color: #FFF;
+    padding: 2px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 24px;
+    margin: 0 5px;
+    border-radius: 20px;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+            transition: transform .3s ease-in-out;
+}
+.header-top div ul li a:hover{
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+.header-top > div:last-child{
+    text-align: left;
+}
+.header-top > div:last-child span{
+    margin: 0 10px;
+    font-weight: bold;
+}
+.header-top > div:last-child span a{
+    color: #FFF;
+    line-height: 25px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.header-top > div:last-child span a:hover,
+.header-top > div:last-child span a:focus,
+.header-top > div:last-child span a:active{
+    color: #50a602;
+}
+
+/** Header-bottom **/
+
+.header-bottom form{
+    margin: 30px 0;
+    text-align: left;
+}
+
+.serc-w{
+    width: 80% !important;
+}
+
+.header-bottom form input{
+    width: 0;
+    display: inline-block;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #adaaaa;
+    background: none;
+    padding: 0;
+    font-weight: bold;
+    color: #50a602;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.header-bottom form i{
+    background: #50a602;
+    color: #FFF;
+    font-weight: bold;
+    width: 15%;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 30px;
+    margin-right: 8px;
+}
+
+
+
+/**
+ * 02. navbar
+ * ----------------------------------------------------------------------------
+ */
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+.navbar-default {
+    background-color: #50a602;
+    border-color: #50a602;
+    border-radius: 0;
+    margin: 0;
+}
+.open > .dropdown-menu {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  opacity:1;
+}
+
+.dropdown-menu {
+  opacity:.3;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: scale(1, 0);
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{
+    color: #ffffff;
+    background-color: #000000;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.dropdown-menu > li > a {
+    color: #50a602;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:active{
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #50a602;
+}
+
+
+
+/**
+ * 03. slider
+ * ----------------------------------------------------------------------------
+ */
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img,
+.carousel-inner{
+    width: 100%;
+    height: 400px;
+}
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-prev,
+.carousel-control .icon-next{
+    background: #50a602;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+}
+.carousel-control{
+    opacity: 1;
+}
+
+
+
+
+/**
+ * 04. Page-containt
+ * ----------------------------------------------------------------------------
+ */
+.page-containt-1{
+    background: #efefef;
+    text-align: center;
+        padding: 50px 0 80px;
+}
+.page-containt-1 h3{
+    margin: 50px 0 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #50a602;
+}
+.page-containt-1 p{
+    font-weight: bold;
+    line-height: 30px;
+    color: #4e4e4e;
+    padding: 0 100px;
+}
+
+
+/**
+ * 05. Page-owl
+ * ----------------------------------------------------------------------------
+ */
+
+.page-owl-1{
+    background: url(images/bg2.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 400px;
+}
+#owl-demo .item{
+    display: block;
+    padding: 30px 0px;
+    margin: 0 30px;
+    color: #FFF;
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+}
+#owl-demo .item span,
+.pages-data span{
+    display: block;
+    line-height: 25px;
+        color: white;
+}
+#owl-demo .item > div:first-child,
+.pages-data > div:first-child{
+    background: #FFF;
+    padding: 20px 10px;
+}
+#owl-demo .item > div:first-child > div,
+.pages-data > div:first-child > div{
+    text-align: right;
+}
+#owl-demo .item div:first-child img,
+.pages-data > div:first-child img{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+.owl-theme .owl-controls .owl-buttons div {
+    padding: 5px 9px;
+}
+.owl-theme .owl-buttons i{
+    margin-top: 2px;
+}
+#owl-demo{
+    direction: ltr;
+}
+/*To move navigation buttons outside use these settings*/
+.owl-theme .owl-controls .owl-buttons div {
+  position: absolute;
+}
+.owl-theme .owl-controls .owl-buttons .owl-prev{
+    left: -35px;
+    top: 50%;
+    background: none;
+    font-size: 25px;
+}
+.owl-theme .owl-controls .owl-buttons .owl-next{
+    right: -35px;
+    top: 50%;
+    background: none;
+    font-size: 25px;
+}
+.owl-theme .owl-controls .owl-buttons div{
+    opacity: 1 !important;
+}
+#owl-demo .item > div.div-middle,
+.pages-data > div.div-middle{
+        background: #7092be;
+    text-align: right;
+    padding: 25px;
+}
+#owl-demo .item > div.div-middle h5,
+.pages-data > div.div-middle h5{
+    color: #000;
+}
+#owl-demo .item > div.div-middle div,
+.pages-data > div.div-middle div{
+        margin-top: 10px;
+}
+#owl-demo .item > div.div-middle div img,
+.pages-data > div.div-middle div img{
+    padding: 5px 10px;
+}
+#owl-demo .item > div:last-child,
+.pages-data > div:last-child{
+        background: #828283;
+    padding: 25px;
+    text-align: center;
+}
+#owl-demo .item > div:last-child span,
+.pages-data > div:last-child span{
+    font-size: 13px;
+    color: #FFF;
+}
+#owl-demo .item > div:last-child a,
+.pages-data > div:last-child a{
+        border: 2px solid #FFF;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+.page-owl-1 h3{
+    text-align: center;
+    color: #FFF;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 80px 0 40px;
+}
+.hvr-shutter-in-vertical:before{
+    background: rgb(130, 130, 131) !important;
+}
+.hvr-shutter-in-vertical {
+    background: #50a602 !important;
+}
+.pages-data{
+    margin-bottom: 20px;
+}
+.page-owl-2 > div > div{
+    text-align: center;
+    padding: 30px;
+    min-height: 315px;
+}
+.page-owl-2  div div h4{
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #50a602;
+}
+.page-owl-2  div div span{
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 12px;
+}
+.page-owl-2  div div input[type="email"]{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #FFF;
+    padding: 8px;
+    margin-bottom: 20px;
+    color:  #50a602;
+}
+.page-owl-2  div div input[type="submit"]{
+    background: none;
+    border: 2px solid #50a602;
+    color: #50a602;
+    padding: 10px 40px;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+.page-owl-2  div div input{
+            transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.page-owl-2  div div input:hover,
+.page-owl-2  div div input:focus,
+.page-owl-2  div div input:active{
+        background: #50a602;
+    color: #FFF;
+}
+.page-owl-2  div div p{
+    font-size: 50px;
+    margin-top: 30px;
+    display: inline-block;
+}
+.page-owl-2  div div:last-child:hover i{
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+.page-owl-2  div div:last-child i{
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+            transition: transform .3s ease-in-out;
+}
+.page-owl-2  div div textarea{
+    width: 100%;
+    color:  #50a602;
+    height: 100px;
+    border: none;
+    resize: none;
+    padding: 10px;
+}
+
+
+
+
+/**
+ * 06. Footer
+ * ----------------------------------------------------------------------------
+ */
+
+footer{
+    padding: 0 !important;
+}
+.footer-up{
+    background: #424242;
+    padding: 50px 0;
+}
+.footer-up h4{
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 40px;
+}
+.footer-up ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-up li {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #50a602;
+}
+.footer-up li:before {
+  content: "\f0d9"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: 0.7em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+.footer-up li a{
+    color: #c5c4c4;
+    text-decoration: none;
+        transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.footer-up li a:hover,
+.footer-up li a:focus,
+.footer-up li a:active{
+    padding-right: 8px;
+    color: #50a602;
+}
+.footer-up input{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.footer-up textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.footer-up input[type="submit"]{
+    background: #50a602;
+    color: #FFF;
+    font-weight: bold;
+}
+.footer-up span{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+.footer-up span a{
+        color: #FFF;
+    text-decoration: underline;
+}
+.footer-up > .container > div:last-child{
+    text-align: center
+}
+.footer-up > .container > div > a{
+        display: inline-block;
+    text-align: center;
+    border: 1px solid #FFF;
+    color: #FFF;
+    padding: 5px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.footer-down{
+    background: #2e2e2e;
+    overflow: auto;
+    padding: 10px;
+}
+.footer-down span{
+    color: #FFF;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+.footer-down img{
+        width: 8%;
+    float: left;
+}
+.footer-up .hvr-shutter-in-vertical:before {
+    background: #424242 !important;
+}
+
+
+
+
+/**
+ * 07. Free-Page
+ * ----------------------------------------------------------------------------
+ */
+
+.free-page{
+    background: #efefef;
+}
+.free-page h2{
+    text-align: center;
+    margin: 50px 0;
+    font-weight: bold;
+    color: #50a602;
+}
+.free-page > div > div span{
+    font-size: 11px;
+    line-height: 25px;
+    font-weight: bold;
+    color: black;
+}
+.free-page > div > div{
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.free-page > div > div select{
+    border: none;
+    width: 24%;
+    margin-left: 10px;
+    border-radius: 7px;
+    color: #50a602;
+}
+.free-page > div > div button{
+    height: 30px;
+    color: #FFF;
+    background: #50a602;
+    border: none;
+    border-radius: 10px;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus{
+        background-color: #50a602;
+    border-color: #50a602;
+}
+.pagination > li > a,
+.pagination > li > span{
+    color: #50a602;
+}
+.pagination > li > a:focus,
+.pagination > li > a:active,
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > span:active,
+.pagination > li > span:focus{
+        background-color: #50a602;
+    border-color: #50a602;
+            color: #FFF;
+}
+
+.free-page{
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/**
+ * 08.  media quary
+ * ----------------------------------------------------------------------------
+ */
+/* Extra Small Devices, Phones ,iPhone */
+@media screen and (max-width : 767px){
+    .header-top > div,
+    .header-top > div:last-child{
+        text-align: center;
+    }
+    .header-bottom img{
+        width: 100%;
+    }
+    .serc-w {
+    width: 70% !important;
+    }
+    .header-bottom form{
+        margin: 0;
+    }
+    .navbar-header{
+        text-align: center;
+    }
+    .navbar-toggle{
+        float: none;
+        border: 2px solid #efefef;
+        margin: 5px 0;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #efefef;
+    }
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img,
+    .carousel-inner{
+        height: 200px;
+    }
+    .page-containt-1{
+        padding: 20px 0;
+    }
+    .page-containt-1 p{
+        padding: 0 0 20px;
+        margin: 0;
+    }
+    .page-containt-1{
+        padding: 0 10px;
+    }
+    .page-containt-1 h3 {
+    margin: 20px 0;
+    }
+    .page-owl-1 h3{
+        margin: 30px 0 ;
+    }
+    #owl-demo .item {
+        margin: 0;
+        padding: 0;
+    }
+    #owl-demo .item > div:first-child,
+    #owl-demo .item > div.div-middle{
+        overflow: auto;
+    }
+    .page-owl-2 > div > div {
+        margin: 20px 0;
+    }
+    .footer-up {
+        padding: 20px 0;
+        text-align: center;
+    }
+    .footer-up > div > div{
+            margin-bottom: 30px;
+        border-bottom: 1px dashed #f3f2f2;
+        padding-bottom: 30px;
+    }
+    .footer-up > div > div:last-child{
+        border-bottom: none;
+    }
+    .footer-down{
+        text-align: center;
+    }
+    .footer-down img {
+        width: 30%;
+        float: none;
+        margin-top: 10px;
+    }
+    .free-page h2 {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+    .free-page > div > div{
+        overflow: auto;
+        padding: 0;
+    }
+    .pages-data{
+        padding: 0;
+    }
+    .free-page > div > div select,
+    .free-page > div > div button{
+        width: 100%;
+        margin: 5px 0;
+    }
+    #owl-demo .item > div:first-child, .pages-data > div{
+        overflow: auto;
+    }
+    #owl-demo .item > div:first-child, .pages-data > div:first-child > div{
+        padding: 0 5px ;
+    }
+    #owl-demo .item > div.div-middle, .pages-data > div.div-middle{
+        padding: 10px;
+    }
+    #owl-demo .item > div.div-middle div img, .pages-data > div.div-middle div img{
+        padding: 0;
+        margin-top: 10px;
+    }
+    #owl-demo .item > div.div-middle div, .pages-data > div.div-middle div{
+        overflow: auto;
+    }
+
+}
+
+
+/* Small Devices, Tablets */
+@media screen and (min-width : 768px) and (max-width : 991px){
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+            left: -15px
+    }
+    #owl-demo .item > div{
+        overflow: auto;
+    }
+        .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img,
+    .carousel-inner{
+        height: 200px;
+    }
+    .page-containt-1{
+        padding: 20px 0;
+    }
+    .page-containt-1 p{
+        padding: 0 0 20px;
+        margin: 0;
+        font-size: 20px;
+        font-weight: normal;
+    }
+    .page-containt-1{
+        padding: 0 10px;
+    }
+    .page-containt-1 h3 {
+    margin: 20px 0;
+    }
+    .page-owl-1 h3{
+        margin: 30px 0 ;
+    }
+    #owl-demo .item {
+        margin: 0;
+        padding: 15px;
+    }
+    #owl-demo .item > div:first-child,
+    #owl-demo .item > div.div-middle{
+        overflow: auto;
+    }
+    .page-owl-2 > div > div {
+        margin: 20px 0;
+    }
+    .footer-up {
+        padding: 20px 0;
+        text-align: center;
+    }
+    .footer-up > div > div{
+            margin-bottom: 30px;
+        border-bottom: 1px dashed #f3f2f2;
+        padding-bottom: 30px;
+    }
+    .footer-up > div > div:last-child{
+        border-bottom: none;
+    }
+    .footer-down{
+        text-align: center;
+    }
+    .footer-down img {
+        width: 18%;
+        float: none;
+        margin-top: 10px;
+    }
+    .serc-w {
+        width: 65% !important;
+    }
+    .footer-up li a {
+        font-size: 25px;
+    }
+    .footer-up h4 {
+        font-size: 40px;
+    }
+       .free-page > div > div{
+        overflow: auto;
+    }
+    .free-page > div > div select,
+    .free-page > div > div button{
+        width: 100%;
+        margin: 5px 0;
+    }
+    #owl-demo .item > div:first-child, .pages-data > div{
+        overflow: auto;
+    }
+    #owl-demo .item > div:first-child, .pages-data > div:first-child > div{
+        padding: 0 5px ;
+    }
+    #owl-demo .item > div.div-middle, .pages-data > div.div-middle{
+        padding: 10px;
+    }
+    #owl-demo .item > div.div-middle div img, .pages-data > div.div-middle div img{
+        padding: 0;
+        margin-top: 10px;
+    }
+    #owl-demo .item > div.div-middle div, .pages-data > div.div-middle div{
+        overflow: auto;
+    }
+}
+
+/* Medium Devices, screens */
+@media screen and (min-width : 992px) and (max-width : 1199px){
+
+}
+
+
+
+
+/* --------------------END-----------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----23:22 / 09.11.2016-----------------MswsM-----*/
